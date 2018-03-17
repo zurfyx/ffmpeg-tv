@@ -18,6 +18,7 @@ start="30" # Seconds (30) or timestamp (00:00:30.0).
 seconds="30"
 
 # 1.3) Providers which downscale 1080i to 720p (e.g. BellTV) are not allowed.
+# 5.10) Resized video must be within 0.5% of the original aspect ratio.
 scale="-1:720" # <width>:<height>; -1 maintain ratio.
 
 # 4.1) Video must be H.264/MPEG-4 AVC encoded with x264 8-bit.
