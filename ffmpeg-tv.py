@@ -108,6 +108,7 @@ if __name__ == '__main__':
   parser.add_argument('-m', '--map', type=str, default=Default.map, help='map', metavar='')
   parser.add_argument('-ts', '--time-start', type=str, default=Default.time_start, help='time start', metavar='')
   parser.add_argument('-td', '--time-duration', type=str, default=Default.time_duration, help='time duration', metavar='')
+  parser.add_argument('-pp', '--params', type=str, default=None, help='your custom ffmpeg params', metavar='')
   
   args = parser.parse_args()
   
@@ -139,6 +140,8 @@ if __name__ == '__main__':
     ffmpeg_query += ['-ss', args.time_start]
   if (args.time_duration):
     ffmpeg_query += ['-t', args.time_duration]
+  if (args.params):
+    ffmpeg_query += args.params.split(' ')
   ffmpeg_query += [args.output]
   
   print('> ' + ' '.join(ffmpeg_query))
